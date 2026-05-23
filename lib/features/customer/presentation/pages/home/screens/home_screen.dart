@@ -58,6 +58,28 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Good Morning',
+                  style: TextStyle(
+                    fontSize: 11.r,
+                    fontWeight: FontWeight.w500,
+                    color: context.colors.textSecondary,
+                  ),
+                ),
+                Text(
+                  'Alex 👋',
+                  style: TextStyle(
+                    fontSize: 21.r,
+                    fontWeight: FontWeight.w700,
+                    color: context.colors.textPrimary,
+                  ),
+                ),
+              ],
+            ),
+            20.gapH,
             const AiAdvisorCardWidget(),
             20.gapH,
             const FinancialHealthCardWidget(),
