@@ -14,8 +14,8 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       hasSafeArea: true,
-      statusBarColor: context.colors.primaryDarker,
-      backgroundColor: context.colors.primaryDarker,
+      statusBarColor: context.colors.primaryDarkest,
+      backgroundColor: context.colors.primaryDarkest,
       body: Stack(
         children: [
           // Background star particles
@@ -85,7 +85,7 @@ class SplashScreen extends StatelessWidget {
                           TextSpan(
                             text: 'Our AI. ',
                             style: TextStyle(
-                              color: context.colors.white.withValues(alpha: 0.6),
+                              color: context.colors.white,
                             ),
                           ),
                           TextSpan(
