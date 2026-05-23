@@ -33,11 +33,46 @@ class $AssetsIconsGen {
   /// File path: assets/icons/apple.svg
   String get apple => 'assets/icons/apple.svg';
 
+  /// File path: assets/icons/bell.svg
+  String get bell => 'assets/icons/bell.svg';
+
+  /// File path: assets/icons/edit.svg
+  String get edit => 'assets/icons/edit.svg';
+
+  /// File path: assets/icons/facebook.svg
+  String get facebook => 'assets/icons/facebook.svg';
+
+  /// File path: assets/icons/goal.svg
+  String get goal => 'assets/icons/goal.svg';
+
   /// File path: assets/icons/google.svg
   String get google => 'assets/icons/google.svg';
 
+  /// File path: assets/icons/home.svg
+  String get home => 'assets/icons/home.svg';
+
+  /// File path: assets/icons/menu.svg
+  String get menu => 'assets/icons/menu.svg';
+
+  /// File path: assets/icons/user.svg
+  String get user => 'assets/icons/user.svg';
+
+  /// File path: assets/icons/users.svg
+  String get users => 'assets/icons/users.svg';
+
   /// List of all assets
-  List<String> get values => [apple, google];
+  List<String> get values => [
+    apple,
+    bell,
+    edit,
+    facebook,
+    goal,
+    google,
+    home,
+    menu,
+    user,
+    users,
+  ];
 }
 
 class $AssetsImagesGen {
@@ -47,11 +82,15 @@ class $AssetsImagesGen {
   AssetGenImage get barChart =>
       const AssetGenImage('assets/images/bar_chart.png');
 
+  /// File path: assets/images/experts_banner.png
+  AssetGenImage get expertsBanner =>
+      const AssetGenImage('assets/images/experts_banner.png');
+
   /// File path: assets/images/robot.png
   AssetGenImage get robot => const AssetGenImage('assets/images/robot.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [barChart, robot];
+  List<AssetGenImage> get values => [barChart, expertsBanner, robot];
 }
 
 class Assets {
