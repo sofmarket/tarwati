@@ -1,5 +1,3 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tarwati/core/theming/colors.dart';
@@ -8,8 +6,6 @@ import 'package:tarwati/core/utils/screen_extensions.dart';
 
 class FinancialHealthCardWidget extends StatelessWidget {
   const FinancialHealthCardWidget({super.key});
-
-  static const _warningOrange = Color(0xFFFF9800);
 
   @override
   Widget build(BuildContext context) {
@@ -89,10 +85,10 @@ class FinancialHealthCardWidget extends StatelessWidget {
                     14.gapH,
                     _HealthMetricRow(
                       icon: Icons.warning_amber_rounded,
-                      iconColor: _warningOrange,
+                      iconColor: context.colors.warning,
                       title: 'Debt Management',
                       status: 'Needs Attention',
-                      statusColor: _warningOrange,
+                      statusColor: context.colors.warning,
                     ),
                   ],
                 ),
@@ -114,17 +110,18 @@ class _HealthScoreRing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 100.r,
-      height: 100.r,
+      width: 110.r,
+      height: 110.r,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          CustomPaint(
-            size: Size(100.r, 100.r),
-            painter: _ScoreRingPainter(
-              progress: score / 100,
+          Positioned.fill(
+            child: CircularProgressIndicator(
+              padding: EdgeInsets.all(8.w),
+              value: score / 100,
               backgroundColor: colors.grey150,
-              gradientColors: [colors.primaryLight, colors.success],
+              valueColor: AlwaysStoppedAnimation(colors.primaryLight),
+              strokeWidth: 8,
             ),
           ),
           Column(
@@ -185,81 +182,29 @@ class _HealthMetricRow extends StatelessWidget {
         ),
         10.gapW,
         Expanded(
-          child: Text(
-            title,
-            style: TextStyle(
-              fontSize: 13.spMin,
-              fontWeight: FontWeight.w600,
-              color: context.colors.textPrimary,
-            ),
-          ),
-        ),
-        Text(
-          status,
-          style: TextStyle(
-            fontSize: 12.spMin,
-            fontWeight: FontWeight.w600,
-            color: statusColor,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: 13.spMin,
+                  fontWeight: FontWeight.w600,
+                  color: context.colors.textPrimary,
+                ),
+              ),
+              Text(
+                status,
+                style: TextStyle(
+                  fontSize: 12.spMin,
+                  fontWeight: FontWeight.w600,
+                  color: statusColor,
+                ),
+              ),
+            ],
           ),
         ),
       ],
     );
-  }
-}
-
-class _ScoreRingPainter extends CustomPainter {
-  const _ScoreRingPainter({
-    required this.progress,
-    required this.backgroundColor,
-    required this.gradientColors,
-  });
-
-  final double progress;
-  final Color backgroundColor;
-  final List<Color> gradientColors;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final center = Offset(size.width / 2, size.height / 2);
-    final radius = size.width / 2 - 6;
-    const startAngle = -math.pi / 2;
-    const sweepAngle = 2 * math.pi;
-
-    final backgroundPaint = Paint()
-      ..color = backgroundColor
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 8
-      ..strokeCap = StrokeCap.round;
-
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      startAngle,
-      sweepAngle,
-      false,
-      backgroundPaint,
-    );
-
-    final progressPaint = Paint()
-      ..shader = SweepGradient(
-        colors: gradientColors,
-        startAngle: startAngle,
-        endAngle: startAngle + sweepAngle * progress,
-      ).createShader(Rect.fromCircle(center: center, radius: radius))
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 8
-      ..strokeCap = StrokeCap.round;
-
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      startAngle,
-      sweepAngle * progress,
-      false,
-      progressPaint,
-    );
-  }
-
-  @override
-  bool shouldRepaint(covariant _ScoreRingPainter oldDelegate) {
-    return oldDelegate.progress != progress;
   }
 }

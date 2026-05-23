@@ -94,6 +94,7 @@ class AppColors {
   Color get grey900 => Colors.grey.shade900;
 
   // other
+  Color get warning => Color(0xFFFF9800);
   Color get transparent => Colors.transparent;
   Color get yellow => const Color(0xFFFCC72C);
   Color get yellowDarker => const Color(0xFFE1BA2D);
