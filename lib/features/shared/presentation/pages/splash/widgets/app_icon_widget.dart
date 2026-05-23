@@ -31,13 +31,7 @@ class AppIconWidget extends StatelessWidget {
         ],
       ),
       child: Center(
-        child: ColorFiltered(
-          colorFilter: ColorFilter.mode(
-            Colors.white.withValues(alpha: 0.15),
-            BlendMode.color,
-          ),
-          child: Image.asset(Assets.images.barChart.path, color: Colors.white),
-        ),
+        child: Image.asset(Assets.images.barChart.path, color: Colors.white),
       ),
     );
   }

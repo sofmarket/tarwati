@@ -90,14 +90,14 @@ class SplashScreen extends StatelessWidget {
                           ),
                           TextSpan(
                             text: 'Your freedom.',
-                            style: TextStyle(color: context.colors.primaryDarkest),
+                            style: TextStyle(color: context.colors.primaryLight),
                           ),
                         ],
                       ),
                     ),
                     16.gapH,
                     CircularProgressIndicator(
-                      color: context.colors.primaryDarkest,
+                      color: context.colors.primaryLight,
                       backgroundColor: context.colors.white.withValues(alpha: 0.2),
                     ),
                   ],
