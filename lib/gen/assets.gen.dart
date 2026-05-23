@@ -82,6 +82,26 @@ class $AssetsImagesGen {
   AssetGenImage get barChart =>
       const AssetGenImage('assets/images/bar_chart.png');
 
+  /// File path: assets/images/expert_1.jpg
+  AssetGenImage get expert1 =>
+      const AssetGenImage('assets/images/expert_1.jpg');
+
+  /// File path: assets/images/expert_2.jpg
+  AssetGenImage get expert2 =>
+      const AssetGenImage('assets/images/expert_2.jpg');
+
+  /// File path: assets/images/expert_3.jpeg
+  AssetGenImage get expert3 =>
+      const AssetGenImage('assets/images/expert_3.jpeg');
+
+  /// File path: assets/images/expert_4.jpg
+  AssetGenImage get expert4 =>
+      const AssetGenImage('assets/images/expert_4.jpg');
+
+  /// File path: assets/images/expert_service.png
+  AssetGenImage get expertService =>
+      const AssetGenImage('assets/images/expert_service.png');
+
   /// File path: assets/images/experts_banner.png
   AssetGenImage get expertsBanner =>
       const AssetGenImage('assets/images/experts_banner.png');
@@ -90,7 +110,16 @@ class $AssetsImagesGen {
   AssetGenImage get robot => const AssetGenImage('assets/images/robot.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [barChart, expertsBanner, robot];
+  List<AssetGenImage> get values => [
+    barChart,
+    expert1,
+    expert2,
+    expert3,
+    expert4,
+    expertService,
+    expertsBanner,
+    robot,
+  ];
 }
 
 class Assets {
