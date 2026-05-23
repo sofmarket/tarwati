@@ -25,13 +25,13 @@ class AppColors {
   });
 
   static const light = AppColors(
-    primaryDarkest: Color(0xff3c9139),
-    primaryDarker: Color(0xff44a340),
-    primary: Color(0xFF4CB648),
-    primaryLight: Color(0xff5dbd5a),
-    secondary: Color(0xFF083C5A),
+    primaryDarkest: Color(0xff130950),
+    primaryDarker: Color(0xff130950),
+    primary: Color(0xFF563cec),
+    primaryLight: Color(0xff727bfd),
+    secondary: Color(0xFF130950),
     // secondary: Color(0xFFad2184),
-    secondaryDarker: Color(0xFF073651),
+    secondaryDarker: Color(0xFF130950),
     textPrimary: Color.fromARGB(255, 0, 0, 0),
     textSecondary: Color(0xFF656565),
     textTertiary: Color(0xFF929090),
