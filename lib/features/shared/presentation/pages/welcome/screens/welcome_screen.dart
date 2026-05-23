@@ -74,13 +74,13 @@ class WelcomeScreen extends StatelessWidget {
             const Spacer(),
             CustomButton(
               onPressed: () {},
-              height: 48.h,
+              height: 54.h,
               gradient: LinearGradient(
                 colors: [context.colors.primary, context.colors.primaryDarker],
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Spacer(),
                   Text(
                     'Get Started',
                     style: TextStyle(
@@ -89,11 +89,11 @@ class WelcomeScreen extends StatelessWidget {
                       color: context.colors.white,
                     ),
                   ),
-                  8.gapW,
+                  Spacer(),
                   Icon(
                     Icons.arrow_forward_rounded,
                     color: context.colors.white,
-                    size: 20.r,
+                    size: 24.r,
                   ),
                 ],
               ),
