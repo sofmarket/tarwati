@@ -4,7 +4,7 @@ import 'package:tarwati/core/routing/routes/auth.dart';
 import 'package:tarwati/core/routing/routes/shared.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
-  return GoRouter(initialLocation: '/welcome', routes: _routes);
+  return GoRouter(initialLocation: '/login', routes: _routes);
 });
 
 List<RouteBase> get _routes {

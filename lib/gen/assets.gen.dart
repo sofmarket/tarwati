@@ -27,6 +27,19 @@ class $AssetsI18nGen {
   List<String> get values => [arI18n, enI18n, frI18n];
 }
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/apple.svg
+  String get apple => 'assets/icons/apple.svg';
+
+  /// File path: assets/icons/google.svg
+  String get google => 'assets/icons/google.svg';
+
+  /// List of all assets
+  List<String> get values => [apple, google];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -45,6 +58,7 @@ class Assets {
   const Assets._();
 
   static const $AssetsI18nGen i18n = $AssetsI18nGen();
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
