@@ -38,6 +38,8 @@ enum Routes {
 
   // customer routes
   customer,
+  experts,
+  expertDetails,
   cart,
   checkout,
   search,
