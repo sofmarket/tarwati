@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tarwati/gen/assets.gen.dart';
+import 'package:tarwati/core/utils/context_extensions.dart';
 
 class AppIconWidget extends StatelessWidget {
   const AppIconWidget({super.key});
@@ -23,7 +24,7 @@ class AppIconWidget extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF4A4AFF).withValues(alpha: 0.4),
+            color: context.colors.primaryLight.withValues(alpha: 0.4),
             blurRadius: 24,
             spreadRadius: 2,
           ),

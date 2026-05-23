@@ -25,8 +25,8 @@ class AppColors {
   });
 
   static const light = AppColors(
-    primaryDarkest: Color(0xff130950),
-    primaryDarker: Color(0xff130950),
+    primaryDarkest: Color(0xff1A1A6E),
+    primaryDarker: Color(0xff2E2E9A),
     primary: Color(0xFF563cec),
     primaryLight: Color(0xff727bfd),
     secondary: Color(0xFF130950),
