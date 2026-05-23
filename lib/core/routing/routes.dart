@@ -6,6 +6,7 @@ enum Routes {
 
   // general routes
   splash,
+  welcome,
   settings,
   notifications,
   balance,

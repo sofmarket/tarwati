@@ -34,8 +34,11 @@ class $AssetsImagesGen {
   AssetGenImage get barChart =>
       const AssetGenImage('assets/images/bar_chart.png');
 
+  /// File path: assets/images/robot.png
+  AssetGenImage get robot => const AssetGenImage('assets/images/robot.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [barChart];
+  List<AssetGenImage> get values => [barChart, robot];
 }
 
 class Assets {
