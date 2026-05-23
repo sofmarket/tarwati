@@ -1,0 +1,76 @@
+{
+    "validation": {
+    "required": "Veuillez remplir ce champ",
+    "phoneRequired": "Veuillez entrer le numéro de téléphone",
+    "phoneInvalid": "Numéro de téléphone invalide",
+    "emailRequired": "Veuillez entrer l'e-mail",
+    "emailInvalid": "E-mail invalide",
+    "passwordRequired": "Veuillez entrer le mot de passe",
+    "passwordConfirmationRequired": "Veuillez confirmer le mot de passe",
+    "passwordConfirmationNotMatch": "Les mots de passe ne correspondent pas",
+    "otpInvalid": "Code d'activation invalide",
+    "nameRequired": "Veuillez entrer le nom",
+    "mustBeAtLeast10Characters": "Le commentaire doit contenir au moins 10 caractères",
+    "apiErrorTitle": "Erreur de validation"
+  },
+  "attributes": {
+    "firstName": "Prénom",
+    "lastName": "Nom de famille",
+    "email": "E-mail",
+    "fullName": "Nom complet",
+    "phone": "Téléphone",
+    "countryCode": "Code pays",
+    "profilePicture": "Photo de profil",
+    "gender": "Sexe",
+    "dateOfBirth": "Date de naissance",
+    "address": "Adresse",
+    "city": "Ville",
+    "zipCode": "Code postal"
+  },
+  "exceptions": {
+    "unknown": {
+      "title": "Erreur",
+      "message": "Une erreur s'est produite"
+    },
+    "network": {
+      "title": "Problème réseau",
+      "message": "Veuillez vérifier votre connexion Internet"
+    },
+    "server": {
+      "title": "Erreur",
+      "message": "Veuillez réessayer plus tard"
+    },
+    "timeout": {
+      "title": "Erreur",
+      "message": "Une erreur s'est produite. Veuillez réessayer plus tard"
+    },
+    "custom": {
+      "title": "Erreur",
+      "message": "Une erreur s'est produite"
+    },
+    "appointmentNotInProgress": {
+      "title": "Appel vidéo non disponible",
+      "message": "Ce rendez-vous n'est pas en cours actuellement. Vous ne pouvez rejoindre l'appel vidéo que pendant l'heure du rendez-vous prévu. Veuillez vérifier les détails de votre rendez-vous et réessayer au bon moment."
+    },
+    "paymentFailed": {
+      "title": "Échec du paiement",
+      "message": "Le paiement a échoué. Veuillez réessayer plus tard"
+    },
+    "permissionDenied": {
+      "title": "Permission refusée",
+      "message": "Accès refusé. Vous n'avez pas la permission d'effectuer cette action."
+    },
+    "maintenance": {
+      "title": "Maintenance",
+      "message": "Le système est actuellement en maintenance. Veuillez réessayer plus tard."
+    }
+  },
+  "date": {
+    "today": "Aujourd'hui",
+    "yesterday": "Hier",
+    "tomorrow": "Demain",
+    "beforeYesterday": "Avant-hier"
+  },
+  "noInternetConnection": "Pas de connexion Internet",
+  "checkInternetAndRetry": "Veuillez vérifier votre connexion Internet et réessayer"
+}
