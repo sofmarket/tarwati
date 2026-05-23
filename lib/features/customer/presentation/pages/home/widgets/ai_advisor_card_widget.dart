@@ -32,7 +32,7 @@ class AiAdvisorCardWidget extends StatelessWidget {
                 Text(
                   'Your AI Financial Advisor',
                   style: TextStyle(
-                    fontSize: 12.spMin,
+                    fontSize: 12.r,
                     fontWeight: FontWeight.w500,
                     color: context.colors.white.withValues(alpha: 0.85),
                   ),
@@ -41,7 +41,7 @@ class AiAdvisorCardWidget extends StatelessWidget {
                 Text(
                   'Smart advice.\nBetter future.',
                   style: TextStyle(
-                    fontSize: 22.spMin,
+                    fontSize: 18.r,
                     fontWeight: FontWeight.w800,
                     color: context.colors.white,
                     height: 1.2,
@@ -51,7 +51,7 @@ class AiAdvisorCardWidget extends StatelessWidget {
                 Text(
                   'Personalized plans, expert insights, real results.',
                   style: TextStyle(
-                    fontSize: 12.spMin,
+                    fontSize: 11.r,
                     fontWeight: FontWeight.w400,
                     color: context.colors.white.withValues(alpha: 0.85),
                     height: 1.4,
@@ -78,7 +78,7 @@ class AiAdvisorCardWidget extends StatelessWidget {
                           Text(
                             'Generate My Plan',
                             style: TextStyle(
-                              fontSize: 13.spMin,
+                              fontSize: 13.r,
                               fontWeight: FontWeight.w700,
                               color: context.colors.primary,
                             ),
