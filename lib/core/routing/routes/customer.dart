@@ -5,6 +5,7 @@ import 'package:tarwati/features/customer/presentation/pages/home/screens/home_s
 import 'package:tarwati/features/customer/presentation/pages/experts/screens/experts_screen.dart';
 import 'package:tarwati/features/customer/presentation/pages/goals/screens/goals_screen.dart';
 import 'package:tarwati/features/customer/presentation/pages/plan/screens/plan_screen.dart';
+import 'package:tarwati/features/customer/presentation/pages/profile/screens/profile_screen.dart';
 
 List<RouteBase> customerRoutesList = [
   CustomGoRoute(
@@ -31,5 +32,10 @@ List<RouteBase> customerRoutesList = [
     path: '/plan',
     name: Routes.plan.name,
     page: const PlanScreen(),
+  ),
+  CustomGoRoute(
+    path: '/profile',
+    name: Routes.profile.name,
+    page: const ProfileScreen(),
   ),
 ];
