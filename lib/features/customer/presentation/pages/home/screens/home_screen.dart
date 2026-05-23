@@ -21,16 +21,31 @@ class HomeScreen extends StatelessWidget {
     return CustomScaffold(
       appBar: CustomAppBar(
         title: SizedBox.shrink(),
-        leading: IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset(Assets.icons.menu),
-          iconSize: 24.r,
-          color: context.colors.textPrimary,
+        leading: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.r),
+          child: SvgPicture.asset(Assets.icons.menu),
         ),
+        leadingWidth: 58.r,
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(Assets.icons.bell),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.r),
+            child: Stack(
+              children: [
+                SvgPicture.asset(Assets.icons.bell, fit: BoxFit.contain),
+                Positioned(
+                  top: 1.r,
+                  right: 3.r,
+                  child: Container(
+                    width: 6.r,
+                    height: 6.r,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: context.colors.error,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
