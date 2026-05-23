@@ -20,7 +20,6 @@ class PlanScreen extends StatefulWidget {
 }
 
 class _PlanScreenState extends State<PlanScreen> {
-  int _currentNavIndex = 1;
   int _selectedTabIndex = 0;
 
   @override
@@ -44,10 +43,7 @@ class _PlanScreenState extends State<PlanScreen> {
       hasSafeArea: true,
       backgroundColor: context.colors.white,
       statusBarColor: context.colors.white,
-      bottomNavigationBar: CustomerBottomNavWidget(
-        currentIndex: _currentNavIndex,
-        onTap: (index) => setState(() => _currentNavIndex = index),
-      ),
+      bottomNavigationBar: CustomerBottomNavWidget(currentIndex: 1),
       body: SingleChildScrollView(
         padding: EdgeInsets.fromLTRB(20.w, 8.h, 20.w, 24.h),
         child: Column(

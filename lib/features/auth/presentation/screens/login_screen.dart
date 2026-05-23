@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tarwati/core/routing/routes.dart';
 import 'package:tarwati/core/utils/context_extensions.dart';
 import 'package:tarwati/core/utils/screen_extensions.dart';
 import 'package:tarwati/core/widgets/custom_button.dart';
@@ -131,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 20.gapH,
                 CustomButton(
-                  onPressed: () {},
+                  onPressed: () => context.goNamed(Routes.customer.name),
                   height: 54.h,
                   width: double.infinity,
                   backgroundColor: context.colors.primary,

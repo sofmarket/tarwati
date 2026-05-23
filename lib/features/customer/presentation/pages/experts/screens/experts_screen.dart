@@ -19,7 +19,6 @@ class ExpertsScreen extends StatefulWidget {
 }
 
 class _ExpertsScreenState extends State<ExpertsScreen> {
-  int _currentNavIndex = 3;
   int _selectedCategoryIndex = 0;
 
   List<ExpertModel> get _filteredExperts {
@@ -56,10 +55,7 @@ class _ExpertsScreenState extends State<ExpertsScreen> {
       hasSafeArea: true,
       backgroundColor: context.colors.white,
       statusBarColor: context.colors.white,
-      bottomNavigationBar: CustomerBottomNavWidget(
-        currentIndex: _currentNavIndex,
-        onTap: (index) => setState(() => _currentNavIndex = index),
-      ),
+      bottomNavigationBar: CustomerBottomNavWidget(currentIndex: 3),
       body: SingleChildScrollView(
         padding: EdgeInsets.fromLTRB(20.w, 8.h, 20.w, 24.h),
         child: Column(
@@ -81,10 +77,7 @@ class _ExpertsScreenState extends State<ExpertsScreen> {
                 padding: EdgeInsets.only(
                   bottom: index == filteredExperts.length - 1 ? 0 : 12.h,
                 ),
-                child: ExpertCardWidget(
-                  expert: expert,
-                  onBookNow: () {},
-                ),
+                child: ExpertCardWidget(expert: expert, onBookNow: () {}),
               );
             }),
             20.gapH,

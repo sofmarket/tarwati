@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tarwati/core/routing/routes.dart';
 import 'package:tarwati/core/utils/screen_extensions.dart';
 import 'package:tarwati/core/widgets/custom_scaffold.dart';
 import 'package:tarwati/features/shared/presentation/pages/splash/widgets/app_icon_widget.dart';
@@ -6,9 +8,21 @@ import 'package:tarwati/features/shared/presentation/pages/splash/widgets/glass_
 import 'package:tarwati/features/shared/presentation/pages/splash/widgets/stars_widget.dart';
 import 'package:tarwati/core/utils/context_extensions.dart';
 
-
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 5), () {
+      context.goNamed(Routes.welcome.name);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +40,12 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               children: [
                 60.gapH,
-            
+
                 // App Icon
                 AppIconWidget(),
-            
+
                 6.gapH,
-            
+
                 // App Name
                 Column(
                   children: [
@@ -54,13 +68,13 @@ class SplashScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-            
+
                 68.gapH,
-            
+
                 GlassCardWidget(),
-            
+
                 const Spacer(),
-            
+
                 // Tagline
                 Column(
                   children: [
@@ -84,13 +98,13 @@ class SplashScreen extends StatelessWidget {
                         children: [
                           TextSpan(
                             text: 'Our AI. ',
-                            style: TextStyle(
-                              color: context.colors.white,
-                            ),
+                            style: TextStyle(color: context.colors.white),
                           ),
                           TextSpan(
                             text: 'Your freedom.',
-                            style: TextStyle(color: context.colors.primaryLight),
+                            style: TextStyle(
+                              color: context.colors.primaryLight,
+                            ),
                           ),
                         ],
                       ),
@@ -98,7 +112,9 @@ class SplashScreen extends StatelessWidget {
                     16.gapH,
                     CircularProgressIndicator(
                       color: context.colors.primaryLight,
-                      backgroundColor: context.colors.white.withValues(alpha: 0.2),
+                      backgroundColor: context.colors.white.withValues(
+                        alpha: 0.2,
+                      ),
                     ),
                   ],
                 ),

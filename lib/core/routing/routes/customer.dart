@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:tarwati/core/routing/custom_go_route.dart';
+import 'package:tarwati/core/routing/custom_transition.dart';
 import 'package:tarwati/core/routing/routes.dart';
 import 'package:tarwati/features/customer/presentation/pages/home/screens/home_screen.dart';
 import 'package:tarwati/features/customer/presentation/pages/experts/screens/experts_screen.dart';
@@ -8,34 +8,54 @@ import 'package:tarwati/features/customer/presentation/pages/plan/screens/plan_s
 import 'package:tarwati/features/customer/presentation/pages/profile/screens/profile_screen.dart';
 
 List<RouteBase> customerRoutesList = [
-  CustomGoRoute(
+  GoRoute(
     path: '/home',
     name: Routes.customer.name,
-    page: const HomeScreen(),
+    pageBuilder: (context, state) => fadeTransitionPage<dynamic>(
+      context: context,
+      state: state,
+      child: const HomeScreen(),
+    ),
   ),
-  CustomGoRoute(
+  GoRoute(
     path: '/experts',
     name: Routes.experts.name,
-    page: const ExpertsScreen(),
+    pageBuilder: (context, state) => fadeTransitionPage<dynamic>(
+      context: context,
+      state: state,
+      child: const ExpertsScreen(),
+    ),
   ),
   // CustomGoRoute(
   //   path: '/expert-details',
   //   name: Routes.expertDetails.name,
   //   page: const ExpertDetailsScreen(),
   // ),
-  CustomGoRoute(
+  GoRoute(
     path: '/goals',
     name: Routes.goals.name,
-    page: const GoalsScreen(),
+    pageBuilder: (context, state) => fadeTransitionPage<dynamic>(
+      context: context,
+      state: state,
+      child: const GoalsScreen(),
+    ),
   ),
-  CustomGoRoute(
+  GoRoute(
     path: '/plan',
     name: Routes.plan.name,
-    page: const PlanScreen(),
+    pageBuilder: (context, state) => fadeTransitionPage<dynamic>(
+      context: context,
+      state: state,
+      child: const PlanScreen(),
+    ),
   ),
-  CustomGoRoute(
+  GoRoute(
     path: '/profile',
     name: Routes.profile.name,
-    page: const ProfileScreen(),
+    pageBuilder: (context, state) => fadeTransitionPage<dynamic>(
+      context: context,
+      state: state,
+      child: const ProfileScreen(),
+    ),
   ),
 ];

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tarwati/core/routing/routes.dart';
 import 'package:tarwati/core/utils/context_extensions.dart';
 import 'package:tarwati/core/utils/screen_extensions.dart';
 import 'package:tarwati/core/widgets/custom_button.dart';
@@ -73,7 +75,7 @@ class WelcomeScreen extends StatelessWidget {
             PageIndicatorsWidget(activeIndex: 0),
             const Spacer(),
             CustomButton(
-              onPressed: () {},
+              onPressed: () => context.pushNamed(Routes.login.name),
               height: 54.h,
               gradient: LinearGradient(
                 colors: [context.colors.primary, context.colors.primaryDarker],

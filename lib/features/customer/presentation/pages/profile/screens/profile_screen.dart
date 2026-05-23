@@ -17,18 +17,13 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  int _currentNavIndex = 4;
-
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
       hasSafeArea: false,
       backgroundColor: context.colors.white,
       statusBarColor: context.colors.white,
-      bottomNavigationBar: CustomerBottomNavWidget(
-        currentIndex: _currentNavIndex,
-        onTap: (index) => setState(() => _currentNavIndex = index),
-      ),
+      bottomNavigationBar: CustomerBottomNavWidget(currentIndex: 4),
       body: SingleChildScrollView(
         child: Column(
           children: [

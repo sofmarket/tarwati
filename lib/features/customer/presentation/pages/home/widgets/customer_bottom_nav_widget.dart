@@ -1,26 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tarwati/core/routing/routes.dart';
 import 'package:tarwati/core/utils/context_extensions.dart';
 import 'package:tarwati/core/utils/screen_extensions.dart';
 import 'package:tarwati/gen/assets.gen.dart';
 
 class CustomerBottomNavWidget extends StatelessWidget {
-  const CustomerBottomNavWidget({
-    super.key,
-    this.currentIndex = 0,
-    this.onTap,
-  });
+  const CustomerBottomNavWidget({super.key, this.currentIndex = 0});
 
   final int currentIndex;
-  final ValueChanged<int>? onTap;
 
   static final _items = [
-    BottomNavItem(icon: Assets.icons.home, label: 'Home'),
-    BottomNavItem(icon: Assets.icons.edit, label: 'Plan'),
-    BottomNavItem(icon: Assets.icons.goal, label: 'Goals'),
-    BottomNavItem(icon: Assets.icons.users, label: 'Experts'),
-    BottomNavItem(icon: Assets.icons.user, label: 'Profile'),
+    BottomNavItem(
+      icon: Assets.icons.home,
+      label: 'Home',
+      route: Routes.customer.name,
+    ),
+    BottomNavItem(
+      icon: Assets.icons.edit,
+      label: 'Plan',
+      route: Routes.plan.name,
+    ),
+    BottomNavItem(
+      icon: Assets.icons.goal,
+      label: 'Goals',
+      route: Routes.goals.name,
+    ),
+    BottomNavItem(
+      icon: Assets.icons.users,
+      label: 'Experts',
+      route: Routes.experts.name,
+    ),
+    BottomNavItem(
+      icon: Assets.icons.user,
+      label: 'Profile',
+      route: Routes.profile.name,
+    ),
   ];
 
   @override
@@ -29,10 +46,7 @@ class CustomerBottomNavWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: context.colors.white,
         border: Border(
-          top: BorderSide(
-            color: context.colors.stroke,
-            width: 1.r,
-          ),
+          top: BorderSide(color: context.colors.stroke, width: 1.r),
         ),
       ),
       child: SafeArea(
@@ -49,7 +63,7 @@ class CustomerBottomNavWidget extends StatelessWidget {
                   : context.colors.textTertiary;
 
               return InkWell(
-                onTap: () => onTap?.call(index),
+                onTap: () => context.goNamed(item.route),
                 borderRadius: BorderRadius.circular(12.r),
                 child: Padding(
                   padding: EdgeInsets.symmetric(
@@ -89,8 +103,13 @@ class CustomerBottomNavWidget extends StatelessWidget {
 }
 
 class BottomNavItem {
-  const BottomNavItem({required this.icon, required this.label});
+  const BottomNavItem({
+    required this.icon,
+    required this.label,
+    required this.route,
+  });
 
   final String icon;
   final String label;
+  final String route;
 }

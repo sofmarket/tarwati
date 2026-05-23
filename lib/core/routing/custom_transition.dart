@@ -14,23 +14,29 @@ CustomTransitionPage transitionPage<T>({
     reverseTransitionDuration: const Duration(milliseconds: 280),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       return SlideTransition(
-        position: Tween<Offset>(
-          begin: const Offset(1.0, 0.0),
-          end: const Offset(0.0, 0.0),
-        ).animate(CurvedAnimation(
-          parent: animation,
-          curve: Curves.easeOutQuint,
-          reverseCurve: Curves.easeOutQuint.flipped,
-        )),
+        position:
+            Tween<Offset>(
+              begin: const Offset(1.0, 0.0),
+              end: const Offset(0.0, 0.0),
+            ).animate(
+              CurvedAnimation(
+                parent: animation,
+                curve: Curves.easeOutQuint,
+                reverseCurve: Curves.easeOutQuint.flipped,
+              ),
+            ),
         child: SlideTransition(
-          position: Tween<Offset>(
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(-1.0, 0.0),
-          ).animate(CurvedAnimation(
-            parent: secondaryAnimation,
-            curve: Curves.easeOutQuint,
-            reverseCurve: Curves.easeOutQuint.flipped,
-          )),
+          position:
+              Tween<Offset>(
+                begin: const Offset(0.0, 0.0),
+                end: const Offset(-1.0, 0.0),
+              ).animate(
+                CurvedAnimation(
+                  parent: secondaryAnimation,
+                  curve: Curves.easeOutQuint,
+                  reverseCurve: Curves.easeOutQuint.flipped,
+                ),
+              ),
           child: child,
         ),
       );
@@ -53,14 +59,13 @@ CustomTransitionPage modalTransitionPage<T>({
       return FadeTransition(
         opacity: animation,
         child: ScaleTransition(
-          scale: Tween<double>(
-            begin: 0.8,
-            end: 1.0,
-          ).animate(CurvedAnimation(
-            parent: animation,
-            curve: Curves.easeOutBack,
-            reverseCurve: Curves.easeInBack,
-          )),
+          scale: Tween<double>(begin: 0.8, end: 1.0).animate(
+            CurvedAnimation(
+              parent: animation,
+              curve: Curves.easeOutBack,
+              reverseCurve: Curves.easeInBack,
+            ),
+          ),
           child: child,
         ),
       );
@@ -81,14 +86,17 @@ CustomTransitionPage bottomSheetTransitionPage<T>({
     reverseTransitionDuration: const Duration(milliseconds: 300),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       return SlideTransition(
-        position: Tween<Offset>(
-          begin: const Offset(0.0, 1.0),
-          end: const Offset(0.0, 0.0),
-        ).animate(CurvedAnimation(
-          parent: animation,
-          curve: Curves.easeOutCubic,
-          reverseCurve: Curves.easeInCubic,
-        )),
+        position:
+            Tween<Offset>(
+              begin: const Offset(0.0, 1.0),
+              end: const Offset(0.0, 0.0),
+            ).animate(
+              CurvedAnimation(
+                parent: animation,
+                curve: Curves.easeOutCubic,
+                reverseCurve: Curves.easeInCubic,
+              ),
+            ),
         child: child,
       );
     },
@@ -108,25 +116,43 @@ CustomTransitionPage rotationTransitionPage<T>({
     reverseTransitionDuration: const Duration(milliseconds: 350),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       return RotationTransition(
-        turns: Tween<double>(
-          begin: 0.0,
-          end: 1.0,
-        ).animate(CurvedAnimation(
-          parent: animation,
-          curve: Curves.easeInOut,
-          reverseCurve: Curves.easeInOut.flipped,
-        )),
-        child: ScaleTransition(
-          scale: Tween<double>(
-            begin: 0.0,
-            end: 1.0,
-          ).animate(CurvedAnimation(
+        turns: Tween<double>(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
             parent: animation,
-            curve: Curves.elasticOut,
-            reverseCurve: Curves.elasticIn,
-          )),
+            curve: Curves.easeInOut,
+            reverseCurve: Curves.easeInOut.flipped,
+          ),
+        ),
+        child: ScaleTransition(
+          scale: Tween<double>(begin: 0.0, end: 1.0).animate(
+            CurvedAnimation(
+              parent: animation,
+              curve: Curves.elasticOut,
+              reverseCurve: Curves.elasticIn,
+            ),
+          ),
           child: child,
         ),
+      );
+    },
+  );
+}
+
+CustomTransitionPage fadeTransitionPage<T>({
+  required BuildContext context,
+  required GoRouterState state,
+  required Widget child,
+}) {
+  return CustomTransitionPage<T>(
+    key: state.pageKey,
+    name: state.name,
+    child: child,
+    transitionDuration: const Duration(milliseconds: 250),
+    reverseTransitionDuration: const Duration(milliseconds: 200),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      return FadeTransition(
+        opacity: CurvedAnimation(parent: animation, curve: Curves.easeInOut),
+        child: child,
       );
     },
   );

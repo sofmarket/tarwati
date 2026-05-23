@@ -7,6 +7,7 @@ import 'package:tarwati/core/widgets/custom_scaffold.dart';
 import 'package:tarwati/features/customer/presentation/pages/goals/models/goal_model.dart';
 import 'package:tarwati/features/customer/presentation/pages/goals/widgets/goal_card_widget.dart';
 import 'package:tarwati/features/customer/presentation/pages/goals/widgets/goals_progress_header_widget.dart';
+import 'package:tarwati/features/customer/presentation/pages/home/widgets/customer_bottom_nav_widget.dart';
 
 class GoalsScreen extends StatefulWidget {
   const GoalsScreen({super.key});
@@ -58,6 +59,7 @@ class _GoalsScreenState extends State<GoalsScreen> {
       hasSafeArea: true,
       backgroundColor: context.colors.white,
       statusBarColor: context.colors.white,
+      bottomNavigationBar: CustomerBottomNavWidget(currentIndex: 2),
       body: Column(
         children: [
           Expanded(

@@ -13,15 +13,8 @@ import 'package:tarwati/features/customer/presentation/pages/home/widgets/custom
 import 'package:tarwati/features/customer/presentation/pages/home/widgets/recent_insights_widget.dart';
 import 'package:tarwati/gen/assets.gen.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int _currentNavIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
       hasSafeArea: true,
       backgroundColor: context.colors.white,
       statusBarColor: context.colors.white,
-      bottomNavigationBar: CustomerBottomNavWidget(
-        currentIndex: _currentNavIndex,
-        onTap: (index) => setState(() => _currentNavIndex = index),
-      ),
+      bottomNavigationBar: CustomerBottomNavWidget(currentIndex: 0),
       body: SingleChildScrollView(
         padding: EdgeInsets.fromLTRB(20.w, 8.h, 20.w, 24.h),
         child: Column(
