@@ -3,6 +3,8 @@ import 'package:tarwati/core/routing/custom_go_route.dart';
 import 'package:tarwati/core/routing/routes.dart';
 import 'package:tarwati/features/customer/presentation/pages/home/screens/home_screen.dart';
 import 'package:tarwati/features/customer/presentation/pages/experts/screens/experts_screen.dart';
+import 'package:tarwati/features/customer/presentation/pages/goals/screens/goals_screen.dart';
+import 'package:tarwati/features/customer/presentation/pages/plan/screens/plan_screen.dart';
 
 List<RouteBase> customerRoutesList = [
   CustomGoRoute(
@@ -14,5 +16,20 @@ List<RouteBase> customerRoutesList = [
     path: '/experts',
     name: Routes.experts.name,
     page: const ExpertsScreen(),
+  ),
+  // CustomGoRoute(
+  //   path: '/expert-details',
+  //   name: Routes.expertDetails.name,
+  //   page: const ExpertDetailsScreen(),
+  // ),
+  CustomGoRoute(
+    path: '/goals',
+    name: Routes.goals.name,
+    page: const GoalsScreen(),
+  ),
+  CustomGoRoute(
+    path: '/plan',
+    name: Routes.plan.name,
+    page: const PlanScreen(),
   ),
 ];

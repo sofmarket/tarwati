@@ -40,6 +40,8 @@ enum Routes {
   customer,
   experts,
   expertDetails,
+  goals,
+  plan,
   cart,
   checkout,
   search,
