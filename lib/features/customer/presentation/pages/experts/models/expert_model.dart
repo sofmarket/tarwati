@@ -9,6 +9,12 @@ class ExpertModel {
     required this.pricePerSession,
     required this.imagePath,
     this.isOnline = true,
+    this.about = '',
+    this.expertiseAreas = const [],
+    this.sessionCount = 0,
+    this.satisfactionRate = 98,
+    this.audioSessionPrice = 100,
+    this.sessionDurationMinutes = 60,
   });
 
   final String name;
@@ -20,6 +26,14 @@ class ExpertModel {
   final int pricePerSession;
   final String imagePath;
   final bool isOnline;
+  final String about;
+  final List<String> expertiseAreas;
+  final int sessionCount;
+  final int satisfactionRate;
+  final int audioSessionPrice;
+  final int sessionDurationMinutes;
+
+  String get firstName => name.split(',').first.split(' ').first;
 }
 
 const expertCategories = [
@@ -32,14 +46,27 @@ const expertCategories = [
 
 const expertsList = [
   ExpertModel(
-    name: 'Michael Thompson, CFP®',
+    name: 'Omar Al-Harbi, CFP®',
     title: 'Certified Financial Planner',
     rating: 4.9,
     reviewCount: 128,
     yearsExperience: 8,
-    tags: ['Financial Planning', 'Investing'],
+    tags: ['Financial Planning', 'Investing', 'Retirement'],
     pricePerSession: 150,
     imagePath: 'assets/images/expert_1.jpg',
+    about:
+        'Omar is a Certified Financial Planner with over 8 years of experience helping individuals and families achieve their financial goals. He specializes in comprehensive financial planning, investment strategies, and retirement planning.',
+    expertiseAreas: [
+      'Financial Planning',
+      'Investment Management',
+      'Retirement Planning',
+      'Wealth Management',
+      'Tax Planning',
+      'Debt Management',
+    ],
+    sessionCount: 820,
+    satisfactionRate: 98,
+    audioSessionPrice: 100,
   ),
   ExpertModel(
     name: 'Sarah Chen, CFA®',

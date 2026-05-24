@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tarwati/core/routing/routes.dart';
 import 'package:tarwati/core/utils/context_extensions.dart';
 import 'package:tarwati/core/utils/screen_extensions.dart';
 import 'package:tarwati/core/widgets/custom_app_bar.dart';
@@ -77,7 +79,15 @@ class _ExpertsScreenState extends State<ExpertsScreen> {
                 padding: EdgeInsets.only(
                   bottom: index == filteredExperts.length - 1 ? 0 : 12.h,
                 ),
-                child: ExpertCardWidget(expert: expert, onBookNow: () {}),
+                child: ExpertCardWidget(
+                  expert: expert,
+                  onBookNow: () {
+                    context.pushNamed(
+                      Routes.expertDetails.name,
+                      extra: expert,
+                    );
+                  },
+                ),
               );
             }),
             20.gapH,
