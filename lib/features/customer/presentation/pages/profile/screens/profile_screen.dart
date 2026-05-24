@@ -48,7 +48,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               padding: EdgeInsets.fromLTRB(20.w, 20.h, 20.w, 24.h),
               child: Column(
                 children: [
-                  ProfileSectionCardWidget(
+                  /*ProfileSectionCardWidget(
                     title: 'Account Details',
                     children: [
                       ProfileInfoRowWidget(
@@ -74,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ],
                   ),
-                  16.gapH,
+                  16.gapH,*/
                   ProfileSectionCardWidget(
                     title: 'Account Preferences',
                     children: [
