@@ -27,6 +27,7 @@ enum Routes {
 
   // chat routes
   chat,
+  call,
   conversations,
 
   // customer routes

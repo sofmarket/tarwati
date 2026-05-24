@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
+import 'package:tarwati/core/routing/routes.dart';
 import 'package:tarwati/core/utils/context_extensions.dart';
 import 'package:tarwati/core/utils/screen_extensions.dart';
 import 'package:tarwati/core/widgets/custom_app_bar.dart';
 import 'package:tarwati/core/widgets/custom_button.dart';
 import 'package:tarwati/core/widgets/custom_scaffold.dart';
 import 'package:tarwati/features/customer/presentation/pages/experts/models/expert_model.dart';
+import 'package:tarwati/features/shared/presentation/pages/chat/models/call_session_model.dart';
 import 'package:tarwati/gen/assets.gen.dart';
 
 enum SessionType { video, audio }
@@ -53,6 +56,12 @@ class _ExpertAppointmentScreenState extends State<ExpertAppointmentScreen> {
     setState(() {
       _focusedMonth = DateTime(_focusedMonth.year, _focusedMonth.month + delta);
     });
+  }
+
+  String _formatEndTime(String startTime, int durationMinutes) {
+    final parsed = DateFormat('hh:mm a').parse(startTime);
+    final end = parsed.add(Duration(minutes: durationMinutes));
+    return DateFormat('hh:mm a').format(end);
   }
 
   @override
@@ -157,7 +166,30 @@ class _ExpertAppointmentScreenState extends State<ExpertAppointmentScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: _BottomBar(onConfirm: () {}),
+      bottomNavigationBar: _BottomBar(
+        onConfirm: () {
+          final sessionTypeLabel = _sessionType == SessionType.video
+              ? 'Video Session'
+              : 'Audio Session';
+          final formattedDate =
+              DateFormat('EEE, d MMM yyyy').format(_selectedDate);
+          final endTime = _formatEndTime(
+            _selectedTime,
+            _expert.sessionDurationMinutes,
+          );
+
+          context.pushNamed(
+            Routes.call.name,
+            extra: CallSessionModel.fromBooking(
+              expertName: _expert.name,
+              expertImagePath: _expert.imagePath,
+              sessionType: sessionTypeLabel,
+              sessionDate: formattedDate,
+              sessionTime: '$_selectedTime - $endTime',
+            ),
+          );
+        },
+      ),
     );
   }
 }
