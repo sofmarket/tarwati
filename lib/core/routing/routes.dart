@@ -20,6 +20,7 @@ enum Routes {
   support,
   profile,
   editProfile,
+  preferences,
   paymentMethods,
   payment,
   paymentSuccess,

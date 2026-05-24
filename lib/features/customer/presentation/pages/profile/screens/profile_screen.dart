@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tarwati/core/routing/routes.dart';
 import 'package:tarwati/core/utils/context_extensions.dart';
 import 'package:tarwati/core/utils/screen_extensions.dart';
 import 'package:tarwati/core/widgets/custom_scaffold.dart';
@@ -8,6 +11,7 @@ import 'package:tarwati/features/customer/presentation/pages/profile/widgets/pro
 import 'package:tarwati/features/customer/presentation/pages/profile/widgets/profile_header_widget.dart';
 import 'package:tarwati/features/customer/presentation/pages/profile/widgets/profile_info_row_widget.dart';
 import 'package:tarwati/features/customer/presentation/pages/profile/widgets/profile_section_card_widget.dart';
+import 'package:tarwati/gen/assets.gen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -17,6 +21,18 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  void _openEditProfile() {
+    context.pushNamed(Routes.editProfile.name);
+  }
+
+  void _openPreferences() {
+    context.pushNamed(Routes.preferences.name);
+  }
+
+  void _openAbout() {
+    context.pushNamed(Routes.about.name);
+  }
+
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
@@ -27,7 +43,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const ProfileHeaderWidget(),
+            ProfileHeaderWidget(onEditPhoto: _openEditProfile),
             Padding(
               padding: EdgeInsets.fromLTRB(20.w, 20.h, 20.w, 24.h),
               child: Column(
@@ -43,7 +59,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           size: 16.r,
                           color: context.colors.primary,
                         ),
-                        onTap: () {},
+                        onTap: _openEditProfile,
                       ),
                       ProfileInfoRowWidget(
                         label: 'Phone',
@@ -53,7 +69,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           size: 16.r,
                           color: context.colors.primary,
                         ),
-                        onTap: () {},
+                        onTap: _openEditProfile,
                         showDivider: false,
                       ),
                     ],
@@ -113,22 +129,62 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     title: 'Personalization',
                     children: [
                       ProfileInfoRowWidget(
-                        label: 'Goal Milestones',
-                        value: 'Link to goals',
-                        trailing: Icon(
-                          Icons.chevron_right_rounded,
-                          size: 20.r,
-                          color: context.colors.textTertiary,
+                        label: 'Preferences',
+                        value: '',
+                        trailing: SvgPicture.asset(
+                          Assets.icons.settings,
+                          width: 20.r,
+                          height: 20.r,
+                          colorFilter: ColorFilter.mode(
+                            context.colors.textTertiary,
+                            BlendMode.srcIn,
+                          ),
                         ),
-                        onTap: () {},
+                        onTap: _openPreferences,
                       ),
                       ProfileInfoRowWidget(
-                        label: 'Risk Profile',
-                        value: 'Moderate',
+                        label: 'Notifications',
+                        value: '',
+                        trailing: SvgPicture.asset(
+                          Assets.icons.bell,
+                          width: 20.r,
+                          height: 20.r,
+                          colorFilter: ColorFilter.mode(
+                            context.colors.textTertiary,
+                            BlendMode.srcIn,
+                          ),
+                        ),
+                        onTap: () =>
+                            context.pushNamed(Routes.notifications.name),
                       ),
                       ProfileInfoRowWidget(
-                        label: 'AI Advisor Voice',
-                        value: 'Friendly',
+                        label: 'About',
+                        value: '',
+                        trailing: SvgPicture.asset(
+                          Assets.icons.questionCircle,
+                          width: 20.r,
+                          height: 20.r,
+                          colorFilter: ColorFilter.mode(
+                            context.colors.textTertiary,
+                            BlendMode.srcIn,
+                          ),
+                        ),
+                        onTap: () => context.pushNamed(Routes.about.name),
+                      ),
+                      ProfileInfoRowWidget(
+                        label: 'Terms & Conditions',
+                        value: '',
+                        trailing: SvgPicture.asset(
+                          Assets.icons.attach,
+                          width: 20.r,
+                          height: 20.r,
+                          colorFilter: ColorFilter.mode(
+                            context.colors.textTertiary,
+                            BlendMode.srcIn,
+                          ),
+                        ),
+                        onTap: () =>
+                            context.pushNamed(Routes.termsAndConditions.name),
                         showDivider: false,
                       ),
                     ],
@@ -150,7 +206,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           title: 'Support',
                           subtitle: 'Help Center\nContact Support',
                           icon: Icons.chat_bubble_outline_rounded,
-                          onTap: () {},
+                          onTap: _openAbout,
                         ),
                       ),
                     ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:tarwati/core/routing/routes.dart';
 import 'package:tarwati/core/utils/context_extensions.dart';
 import 'package:tarwati/core/utils/screen_extensions.dart';
 import 'package:tarwati/core/widgets/custom_app_bar.dart';
@@ -27,9 +29,11 @@ class HomeScreen extends StatelessWidget {
         ),
         leadingWidth: 58.r,
         actions: [
-          Padding(
+          IconButton(
+            onPressed: () => context.pushNamed(Routes.notifications.name),
             padding: EdgeInsets.symmetric(horizontal: 16.r),
-            child: Stack(
+            icon: Stack(
+              clipBehavior: Clip.none,
               children: [
                 SvgPicture.asset(Assets.icons.bell, fit: BoxFit.contain),
                 Positioned(

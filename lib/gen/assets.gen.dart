@@ -30,11 +30,17 @@ class $AssetsI18nGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ai.svg
+  String get ai => 'assets/icons/ai.svg';
+
   /// File path: assets/icons/alarm.svg
   String get alarm => 'assets/icons/alarm.svg';
 
   /// File path: assets/icons/apple.svg
   String get apple => 'assets/icons/apple.svg';
+
+  /// File path: assets/icons/attach.svg
+  String get attach => 'assets/icons/attach.svg';
 
   /// File path: assets/icons/bell.svg
   String get bell => 'assets/icons/bell.svg';
@@ -78,6 +84,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/clock.svg
   String get clock => 'assets/icons/clock.svg';
 
+  /// File path: assets/icons/delete.svg
+  String get delete => 'assets/icons/delete.svg';
+
   /// File path: assets/icons/edit.svg
   String get edit => 'assets/icons/edit.svg';
 
@@ -87,8 +96,17 @@ class $AssetsIconsGen {
   /// File path: assets/icons/emote_sad.svg
   String get emoteSad => 'assets/icons/emote_sad.svg';
 
+  /// File path: assets/icons/eyeClose.svg
+  String get eyeClose => 'assets/icons/eyeClose.svg';
+
+  /// File path: assets/icons/eyeOpen.svg
+  String get eyeOpen => 'assets/icons/eyeOpen.svg';
+
   /// File path: assets/icons/facebook.svg
   String get facebook => 'assets/icons/facebook.svg';
+
+  /// File path: assets/icons/female.svg
+  String get female => 'assets/icons/female.svg';
 
   /// File path: assets/icons/filters.svg
   String get filters => 'assets/icons/filters.svg';
@@ -110,6 +128,15 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/like.svg
   String get like => 'assets/icons/like.svg';
+
+  /// File path: assets/icons/logout.svg
+  String get logout => 'assets/icons/logout.svg';
+
+  /// File path: assets/icons/male.svg
+  String get male => 'assets/icons/male.svg';
+
+  /// File path: assets/icons/marker.svg
+  String get marker => 'assets/icons/marker.svg';
 
   /// File path: assets/icons/menu-hamburger-svgrepo-com.svg
   String get menuHamburgerSvgrepoCom =>
@@ -145,11 +172,20 @@ class $AssetsIconsGen {
   /// File path: assets/icons/pie_chart.svg
   String get pieChart => 'assets/icons/pie_chart.svg';
 
+  /// File path: assets/icons/plus.svg
+  String get plus => 'assets/icons/plus.svg';
+
   /// File path: assets/icons/question_circle.svg
   String get questionCircle => 'assets/icons/question_circle.svg';
 
+  /// File path: assets/icons/ratingEmptyStar.svg
+  String get ratingEmptyStar => 'assets/icons/ratingEmptyStar.svg';
+
   /// File path: assets/icons/refresh_circle.svg
   String get refreshCircle => 'assets/icons/refresh_circle.svg';
+
+  /// File path: assets/icons/search.svg
+  String get search => 'assets/icons/search.svg';
 
   /// File path: assets/icons/send.svg
   String get send => 'assets/icons/send.svg';
@@ -169,6 +205,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/speaker_disabled.svg
   String get speakerDisabled => 'assets/icons/speaker_disabled.svg';
 
+  /// File path: assets/icons/subscription.svg
+  String get subscription => 'assets/icons/subscription.svg';
+
   /// File path: assets/icons/sun.svg
   String get sun => 'assets/icons/sun.svg';
 
@@ -184,13 +223,24 @@ class $AssetsIconsGen {
   /// File path: assets/icons/users.svg
   String get users => 'assets/icons/users.svg';
 
+  /// File path: assets/icons/verified.svg
+  String get verified => 'assets/icons/verified.svg';
+
+  /// File path: assets/icons/wallet.svg
+  String get wallet => 'assets/icons/wallet.svg';
+
   /// File path: assets/icons/warning_circle.svg
   String get warningCircle => 'assets/icons/warning_circle.svg';
 
+  /// File path: assets/icons/whatsapp.svg
+  String get whatsapp => 'assets/icons/whatsapp.svg';
+
   /// List of all assets
   List<String> get values => [
+    ai,
     alarm,
     apple,
+    attach,
     bell,
     calendar,
     calendarClock,
@@ -205,10 +255,14 @@ class $AssetsIconsGen {
     chevronLeft,
     chevronRight,
     clock,
+    delete,
     edit,
     emoteSmile,
     emoteSad,
+    eyeClose,
+    eyeOpen,
     facebook,
+    female,
     filters,
     filters2,
     goal,
@@ -216,6 +270,9 @@ class $AssetsIconsGen {
     google,
     home,
     like,
+    logout,
+    male,
+    marker,
     menuHamburgerSvgrepoCom,
     menu,
     menuHorizontal,
@@ -227,20 +284,27 @@ class $AssetsIconsGen {
     phone,
     phoneCall,
     pieChart,
+    plus,
     questionCircle,
+    ratingEmptyStar,
     refreshCircle,
+    search,
     send,
     settings,
     share,
     sound2SvgrepoCom,
     speaker,
     speakerDisabled,
+    subscription,
     sun,
     user,
     userCheck,
     userInfo,
     users,
+    verified,
+    wallet,
     warningCircle,
+    whatsapp,
   ];
 }
 

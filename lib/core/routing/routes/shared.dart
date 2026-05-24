@@ -2,7 +2,10 @@ import 'package:go_router/go_router.dart';
 import 'package:tarwati/core/routing/custom_go_route.dart';
 import 'package:tarwati/core/routing/custom_transition.dart';
 import 'package:tarwati/core/routing/routes.dart';
+import 'package:tarwati/features/shared/presentation/pages/about/screens/terms_screen.dart';
 import 'package:tarwati/features/shared/presentation/pages/chat/models/call_session_model.dart';
+import 'package:tarwati/features/shared/presentation/pages/about/screens/about_screen.dart';
+import 'package:tarwati/features/shared/presentation/pages/notifications/screens/notifications_screen.dart';
 import 'package:tarwati/features/shared/presentation/pages/splash/screens/splash_screen.dart';
 import 'package:tarwati/features/shared/presentation/pages/welcome/screens/welcome_screen.dart';
 import 'package:tarwati/features/shared/presentation/pages/chat/screens/chat_screen.dart';
@@ -62,5 +65,24 @@ List<RouteBase> sharedRoutesList = [
       state: state,
       child: CallScreen(session: state.extra as CallSessionModel?),
     ),
+  ),
+
+  // notifications
+  CustomGoRoute(
+    path: '/notifications',
+    name: Routes.notifications.name,
+    page: const NotificationsScreen(),
+  ),
+
+  // about
+  CustomGoRoute(
+    path: '/about',
+    name: Routes.about.name,
+    page: const AboutScreen(),
+  ),
+  CustomGoRoute(
+    path: '/terms-and-conditions',
+    name: Routes.termsAndConditions.name,
+    page: const TermsScreen(),
   ),
 ];
