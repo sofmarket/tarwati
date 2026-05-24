@@ -5,7 +5,6 @@ import 'package:tarwati/core/utils/context_extensions.dart';
 import 'package:tarwati/core/utils/screen_extensions.dart';
 import 'package:tarwati/core/widgets/custom_app_bar.dart';
 import 'package:tarwati/core/widgets/custom_scaffold.dart';
-import 'package:tarwati/features/customer/presentation/pages/home/widgets/customer_bottom_nav_widget.dart';
 import 'package:tarwati/features/shared/presentation/pages/splash/widgets/app_icon_widget.dart';
 import 'package:tarwati/gen/assets.gen.dart';
 import 'package:url_launcher/url_launcher.dart';
